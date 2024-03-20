@@ -22,11 +22,13 @@ function setup() {
     cols = width / pixelSize;
     grid = make2DArray(cols, rows);
     grid[10][20] = 1;
+
 }
 
 function draw() {
+
     background(0);
-    stroke(100);
+    noStroke();
     if (mouseIsPressed) {
         if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {
             grid[floor(mouseX/pixelSize)][floor(mouseY/pixelSize)] = 1;
@@ -52,4 +54,8 @@ function draw() {
         }
     }
     grid = next;
+    strokeWeight(5);
+    stroke(255);
+    noFill();
+    rect(0, 0, width, height);
 }
